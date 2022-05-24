@@ -7,10 +7,10 @@ const mysql = require('mysql2');
 
 const connection = mysql.createPool({
     connectionLimit : 10,
-    host:"us-cdbr-east-05.cleardb.net",
-    user:"bdb6a1b57a1075",
-    password:"eebc3772",
-    database:"heroku_b3fa57ac976e83d"
+    host:env.DB_HOST,
+    user:env.DB_USERNAME,
+    password:env.DB_PASSWORD,
+    database:env.DB_SCHEMA
 });
 
 app.use(express.static('public'));
