@@ -6,11 +6,11 @@ require('dotenv').config();
 const mysql = require('mysql2');
 
 const connection = mysql.createPool({
-    connectionLimit : 10,
-    host:env.DB_HOST,
-    user:env.DB_USERNAME,
-    password:env.DB_PASSWORD,
-    database:env.DB_SCHEMA
+    database: process.env.DB_SCHEMA,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    port: process.env.DB_PORT,
+    host: process.env.DB_HOST,
 });
 
 app.use(express.static('public'));
